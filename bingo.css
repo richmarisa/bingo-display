@@ -1,0 +1,46 @@
+body {
+    background-color: black;
+}
+
+#spacer {
+	height: 80px;
+}
+#table {
+  width: 100%;
+
+}
+
+.letter {
+	font-family: Helvetica;
+	font-size: 45pt;
+	border: 1px solid black;
+	text-align: center;
+	height: 110px;
+	background-color: #F66;
+}
+
+.cell {
+	font-family: Helvetica;
+	font-size: 40pt;
+	border: 1px solid black;
+	text-align: center;
+	height: 110px;
+	background-color: white;
+	
+}
+.called {
+	background-color: yellow;
+}
+.lastcalled {
+	background-color: #8F8;
+}
+#clear {
+	background-color: blue;
+	color:white;
+	font-size:12pt;
+	padding:5px;
+	border-radius: 2px;
+}
+#clear:hover {
+	background-color: red;
+}

@@ -1,0 +1,131 @@
+<html>
+	<head>
+		<title>Bingo Display</title>
+		<link rel="stylesheet" type="text/css" href="bingo.css" />
+	</head>
+<body>
+<div id="spacer">&nbsp;</div>
+<table id="table">
+	<tr>
+	<td class="letter">B</td>
+	<td class="cell">1</td>
+	<td class="cell">2</td>
+	<td class="cell">3</td>
+	<td class="cell">4</td>
+	<td class="cell">5</td>
+	<td class="cell">6</td>
+	<td class="cell">7</td>
+	<td class="cell">8</td>
+	<td class="cell">9</td>
+	<td class="cell">10</td>
+	<td class="cell">11</td>
+	<td class="cell">12</td>
+	<td class="cell">13</td>
+	<td class="cell">14</td>
+	<td class="cell">15</td>
+	</tr>
+	<tr>
+	<td class="letter">I</td>
+	<td class="cell">16</td>
+	<td class="cell">17</td>
+	<td class="cell">18</td>
+	<td class="cell">19</td>
+	<td class="cell">20</td>
+	<td class="cell">21</td>
+	<td class="cell">22</td>
+	<td class="cell">23</td>
+	<td class="cell">24</td>
+	<td class="cell">25</td>
+	<td class="cell">26</td>
+	<td class="cell">27</td>
+	<td class="cell">28</td>
+	<td class="cell">29</td>
+	<td class="cell">30</td>
+	</tr>
+	<tr>
+	<td class="letter">N</td>
+	<td class="cell">31</td>
+	<td class="cell">32</td>
+	<td class="cell">33</td>
+	<td class="cell">34</td>
+	<td class="cell">35</td>
+	<td class="cell">36</td>
+	<td class="cell">37</td>
+	<td class="cell">38</td>
+	<td class="cell">39</td>
+	<td class="cell">40</td>
+	<td class="cell">41</td>
+	<td class="cell">42</td>
+	<td class="cell">43</td>
+	<td class="cell">44</td>
+	<td class="cell">45</td>
+	</tr>
+	<tr>
+	<td class="letter">G</td>
+	<td class="cell">46</td>
+	<td class="cell">47</td>
+	<td class="cell">48</td>
+	<td class="cell">49</td>
+	<td class="cell">50</td>
+	<td class="cell">51</td>
+	<td class="cell">52</td>
+	<td class="cell">53</td>
+	<td class="cell">54</td>
+	<td class="cell">55</td>
+	<td class="cell">56</td>
+	<td class="cell">57</td>
+	<td class="cell">58</td>
+	<td class="cell">59</td>
+	<td class="cell">60</td>
+	</tr>
+	<tr>
+	<td class="letter">O</td>
+	<td class="cell">61</td>
+	<td class="cell">62</td>
+	<td class="cell">63</td>
+	<td class="cell">64</td>
+	<td class="cell">65</td>
+	<td class="cell">66</td>
+	<td class="cell">67</td>
+	<td class="cell">68</td>
+	<td class="cell">69</td>
+	<td class="cell">70</td>
+	<td class="cell">71</td>
+	<td class="cell">72</td>
+	<td class="cell">73</td>
+	<td class="cell">74</td>
+	<td class="cell">75</td>
+	</tr>
+</table>
+
+<input type="button" id="clear" value="Clear">
+
+<script type="text/javascript">
+
+	document.querySelector("#clear")
+		.addEventListener("click", event => {
+			if (confirm("Clear Board. Are you sure?")) {
+			    document.querySelectorAll(".cell")
+			    	.forEach(element => element.classList.remove("lastcalled","called"));
+			}
+    	});
+
+	document.querySelectorAll(".cell")
+		.forEach(element => {
+			element.addEventListener("click", event => {
+				if (event.target.classList.contains("called")) {
+					event.target.classList.remove("called", "lastcalled");
+				} else {
+					document.querySelectorAll(".cell")
+						.forEach(element => element.classList.remove("lastcalled"));
+					event.target.classList.add("called", "lastcalled");
+				}
+			});
+		});
+
+</script>
+
+</body>
+</html>
+
+
